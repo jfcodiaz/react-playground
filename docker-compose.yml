@@ -1,0 +1,16 @@
+services:
+  node:
+    build: 
+      context: .
+      dockerfile: ./docker/images/node/Dockerfile
+    ports: 
+      - 3000:3000
+    container_name: ${PROJECT_PREFIX}-node
+    hostname: ${PROJECT_PREFIX}-node
+    command: tail -f /dev/null
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ./docker/config/dev/ssh:/root/.ssh/
+      - ./docker/config/dev/git/.gitconfig:/root/.gitconfig
+    
