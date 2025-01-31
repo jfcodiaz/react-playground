@@ -5,6 +5,8 @@ services:
       dockerfile: ./docker/images/node/Dockerfile
     ports: 
       - 3000:3000
+      - 5173:5173
+      - 24678:24678
     container_name: ${PROJECT_PREFIX}-node
     hostname: ${PROJECT_PREFIX}-node
     command: tail -f /dev/null
