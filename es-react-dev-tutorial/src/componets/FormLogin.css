@@ -1,0 +1,14 @@
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:  10px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form label {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-size: 1em;
+    color: darkblue;
+}
