@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
 import './FormLogin.css';
 
-export default () => {
+export default ({onLogin}) => {
   const onSubmit = (event) => {
     event.preventDefault();
     const data = {
         user, password
     }
-
-    if (user == 'admin' || password =='admin') {
-        // show admin page
-        console.log("Show Admin page");
+    if ((user == 'admin' && password =='admin') || (user == 'user' && password == 'user')) {
+        onLogin(data);
+    } else {
+        onLogin({
+            user: false
+        });
     }
-
-    if(user == 'user' || password == 'user') {
-        // show user page
-        console.log("Show User page");
-    }
-
-    console.log("Form Summited", data);   
   }
 
   const [user, setUser] = useState('');
