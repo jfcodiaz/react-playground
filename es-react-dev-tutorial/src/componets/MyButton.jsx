@@ -1,5 +1,9 @@
-export default () => {
+export default (props) => {
   return (
-    <button>My Button</button>
+    <button 
+      onClick={props.onClick || (() => {}) }
+    >
+      { props.children || 'My Button' }
+    </button>
   );
 }
